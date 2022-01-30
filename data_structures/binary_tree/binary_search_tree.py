@@ -38,6 +38,23 @@ class BinarySearchTree:
                 node.parent.left = new_children
         else:
             self.root = new_children
+    def get_predecesor(self,root):
+        if root is None:
+            return None
+        root = root.left
+        if root.right is None:
+            root.right = None
+        while root.right:
+            root = root.right
+        return root
+
+    def get_successor(self,root):
+        if root is None:
+            return None
+        root = root.right
+        while root.left:
+            root = root.left
+        return root
 
     def is_right(self, node):
         return node == node.parent.right
@@ -194,7 +211,20 @@ def binary_search_tree():
 
     # Prints all the elements of the list in order traversal
     print(t)
+ 
+    if t.search(14) is not None:
+        try:
+            print("the is the predecesor is: ", t.get_predecesor(t.search(14)))
+        except:
+            print("There is no predecessor")
+        try:
+            print("the successor is: ", t.get_successor(t.search(14)))
+        except:
+            print("There is no sucessor")
+    else:
+        print("The value doesn't exit")
 
+    
     if t.search(6) is not None:
         print("The value 6 exists")
     else:
@@ -205,17 +235,18 @@ def binary_search_tree():
     else:
         print("The value -1 doesn't exist")
 
+    
+
     if not t.empty():
         print("Max Value: ", t.get_max().value)
         print("Min Value: ", t.get_min().value)
 
     for i in testlist:
-        t.remove(i)
+        #t.remove(i)
         print(t)
-
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
-    # binary_search_tree()
+    binary_search_tree()
