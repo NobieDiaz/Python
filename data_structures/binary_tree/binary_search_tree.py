@@ -212,6 +212,14 @@ def binary_search_tree():
     
     if t.search(6) is not None:
         print("The value 6 exists")
+        try:
+            print("Predecessor: ", t.get_predecesor(t.search(6)))
+        except:
+            print("No predecessor")
+        try:
+            print("Successor: ", t.get_successor(t.search(6)))
+        except:
+            print("No sucessor")  
     else:
         print("The value 6 doesn't exist")
 
