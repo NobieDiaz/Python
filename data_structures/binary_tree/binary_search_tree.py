@@ -42,8 +42,6 @@ class BinarySearchTree:
         if root is None:
             return None
         root = root.left
-        if root.right is None:
-            root.right = None
         while root.right:
             root = root.right
         return root
