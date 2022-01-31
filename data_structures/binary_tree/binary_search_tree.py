@@ -209,19 +209,6 @@ def binary_search_tree():
 
     # Prints all the elements of the list in order traversal
     print(t)
- 
-    if t.search(14) is not None:
-        try:
-            print("the is the predecesor is: ", t.get_predecesor(t.search(14)))
-        except:
-            print("There is no predecessor")
-        try:
-            print("the successor is: ", t.get_successor(t.search(14)))
-        except:
-            print("There is no sucessor")
-    else:
-        print("The value doesn't exit")
-
     
     if t.search(6) is not None:
         print("The value 6 exists")
@@ -232,8 +219,6 @@ def binary_search_tree():
         print("The value -1 exists")
     else:
         print("The value -1 doesn't exist")
-
-    
 
     if not t.empty():
         print("Max Value: ", t.get_max().value)
